@@ -1,299 +1,435 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Haval Jalal — Junior Software Engineer</title>
-  <meta name="description" content="Haval Jalal — Junior Software Engineer | Portfolio" />
-  <meta name="author" content="Haval Jalal" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Haval Jalal — Junior Software Engineer</title>
+    <meta name="description" content="Haval Jalal — Junior Software Engineer | Portfolio" />
+    <meta name="author" content="Haval Jalal" />
 
-  <!-- Favicon (simple SVG data URI) -->
-  <link rel="icon" href='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23000%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2250%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-family=%22Arial,Helvetica,sans-serif%22%3EHJ%3C/text%3E%3C/svg%3E' />
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --muted: #8b949e;
+            --accent1: #58a6ff;
+            --accent2: #f78166;
+            --radius: 16px;
+            --max-width: 1100px;
+        }
 
-  <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent1:#7c3aed; --accent2:#06b6d4;
-      --glass: rgba(255,255,255,0.04);
-      --radius:16px; --max-width:1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;}
-    body{
-      margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent),
-                  radial-gradient(1000px 500px at 90% 90%, rgba(6,182,212,0.06), transparent),
-                  linear-gradient(180deg, #061021 0%, #071426 35%, #071122 100%);
-      color:#e6eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      padding:32px; display:flex; align-items:center; justify-content:center;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    .wrap{width:100%; max-width:var(--max-width);}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: #c9d1d9;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
 
-    header{
-      display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:28px;
-    }
-    .brand{display:flex; align-items:center; gap:14px}
-    .logo{
-      width:56px; height:56px; border-radius:12px; background:linear-gradient(135deg,var(--accent1),var(--accent2));
-      display:grid; place-items:center; font-weight:700; font-size:20px; color:white; box-shadow:0 6px 20px rgba(2,6,23,0.6);
-    }
-    nav{display:flex; gap:12px; align-items:center}
-    .nav-link{color:var(--muted); text-decoration:none; padding:8px 12px; border-radius:10px; font-weight:600; font-size:14px}
-    .nav-link:hover{color:var(--accent2); background:rgba(255,255,255,0.02)}
+        .wrap {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    /* Hero */
-    .hero{display:grid; grid-template-columns: 1fr 380px; gap:28px; align-items:stretch}
-    @media (max-width:900px){.hero{grid-template-columns:1fr;}}
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 10;
+        }
 
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:var(--radius); padding:24px; box-shadow:0 8px 30px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03)}
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    .intro{display:flex; flex-direction:column; gap:18px}
-    .headline{font-size:28px; font-weight:800; line-height:1.02}
-    .sub{color:var(--muted); font-weight:600}
+        .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            color: #fff;
+        }
 
-    .chips{display:flex; gap:10px; flex-wrap:wrap}
-    .chip{background:var(--glass); padding:8px 12px; border-radius:999px; font-weight:700; font-size:13px; color:var(--muted)}
+        nav {
+            display: flex;
+            gap: 20px;
+        }
 
-    /* profile card */
-    .profile{display:flex; flex-direction:column; gap:18px; align-items:center; text-align:center}
-    .avatar{width:120px; height:120px; border-radius:20px; display:grid; place-items:center; font-weight:800; font-size:34px; color:#041025;
-      background:linear-gradient(180deg,#fff,#e6eef8); box-shadow:0 10px 30px rgba(2,6,23,0.5)}
-    .age{color:var(--muted); font-weight:700}
-    .role{font-weight:800; font-size:16px}
+            nav a {
+                color: var(--muted);
+                text-decoration: none;
+                font-weight: 600;
+            }
 
-    /* stats */
-    .stats{display:flex; gap:12px; width:100%; justify-content:space-between}
-    .stat{flex:1; background:rgba(255,255,255,0.02); padding:12px; border-radius:12px}
-    .stat strong{display:block; font-size:18px}
-    .muted{color:var(--muted)}
+                nav a:hover, nav a.active {
+                    color: var(--accent1);
+                }
 
-    /* projects */
-    .grid{display:grid; gap:14px; grid-template-columns:repeat(3,1fr)}
-    @media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:600px){.grid{grid-template-columns:1fr}}
-    .project{padding:14px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent); border:1px solid rgba(255,255,255,0.02)}
-    .project h4{margin:0 0 8px 0}
-    .tags{display:flex; gap:8px; flex-wrap:wrap}
-    .tag{font-size:12px; padding:6px 8px; border-radius:8px; background:rgba(255,255,255,0.02); color:var(--muted)}
+        /* Hero */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
 
-    /* contact */
-    .contact-form{display:flex; flex-direction:column; gap:10px}
-    input,textarea{background:transparent; border:1px solid rgba(255,255,255,0.04); padding:10px 12px; border-radius:10px; color:inherit; outline:none}
-    input:focus,textarea:focus{border-color:rgba(124,58,237,0.7); box-shadow:0 6px 20px rgba(124,58,237,0.06)}
-    .btn{display:inline-flex; gap:8px; align-items:center; padding:10px 14px; border-radius:12px; border:none; cursor:pointer; font-weight:700}
-    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#041025}
-    .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--muted)}
+            .hero h1 {
+                font-size: 3rem;
+                margin-bottom: 10px;
+            }
 
-    footer{margin-top:30px; color:var(--muted); text-align:center; font-size:13px}
+        .typing {
+            color: var(--accent1);
+            font-weight: 700;
+            font-size: 1.2rem;
+            height: 1.4rem;
+            margin-bottom: 20px;
+        }
 
-    /* small utilities */
-    .kbd{background:rgba(0,0,0,0.3); padding:4px 8px; border-radius:6px; font-weight:700}
+        .hero p {
+            max-width: 700px;
+            color: var(--muted);
+        }
 
-    /* subtle floating blob animation */
-    .blob{position:absolute; inset:auto; width:320px; height:320px; right:-80px; top:-80px; filter:blur(40px); opacity:0.12; pointer-events:none; transform:rotate(10deg)}
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+        }
 
-    /* tiny responsiveness tweaks */
-    @media (max-width:480px){body{padding:20px} .headline{font-size:22px}}
-  </style>
+        .btn {
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--accent1);
+            color: #fff;
+        }
+
+            .btn-primary:hover {
+                opacity: 0.9;
+            }
+
+        .btn-outline {
+            border: 1px solid var(--accent1);
+            color: var(--accent1);
+        }
+
+            .btn-outline:hover {
+                background: rgba(88, 166, 255, 0.1);
+            }
+
+        /* About */
+        .about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+            gap: 30px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            display: grid;
+            place-items: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 12px;
+            max-width: 600px;
+        }
+
+        .skill {
+            background: var(--card);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* Projects */
+        .projects {
+            padding: 60px 20px;
+        }
+
+            .projects h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+        .grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .project {
+            background: var(--card);
+            padding: 20px;
+            border-radius: var(--radius);
+            transition: transform 0.3s;
+        }
+
+            .project:hover {
+                transform: translateY(-5px);
+            }
+
+            .project h3 {
+                margin-bottom: 8px;
+            }
+
+        .tags {
+            margin-top: 10px;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.08);
+            color: var(--muted);
+        }
+
+        /* Contact */
+        .contact {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            background: #0d1117;
+            color: #c9d1d9;
+        }
+
+            input:focus, textarea:focus {
+                outline: 1px solid var(--accent1);
+            }
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: var(--accent1);
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* Animations */
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+            [data-animate].visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">HJ</div>
-        <div>
-          <div style="font-weight:800;">Haval Jalal</div>
-          <div style="font-size:12px; color:var(--muted)">Junior Software Engineer • 34 years old</div>
-        </div>
-      </div>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="logo">HJ</div>
+                <div>
+                    <div class="brand-name">Haval Jalal</div>
+                    <div style="font-size:13px; color:var(--muted)">Junior Software Engineer</div>
+                </div>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="https://github.com/Haval-Jalal" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/havaljalal/" target="_blank">LinkedIn</a>
+            </nav>
+        </header>
 
-      <nav aria-label="Main navigation">
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#contact">Contact</a>
-        <a class="nav-link" href="#" id="theme-toggle">Toggle Theme</a>
-      </nav>
-    </header>
+        <section class="hero" id="home">
+            <h1>👋 Hi, I'm Haval Jalal</h1>
+            <div class="typing" id="typing"></div>
+            <p>34-year-old Junior Software Engineer passionate about building clean, efficient, and user-friendly software. I focus on full-stack web development, modern frameworks, and best coding practices.</p>
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </section>
 
-    <main class="hero">
-      <section class="card intro">
-        <div>
-          <div class="headline">Hi — I’m <span style="background:linear-gradient(90deg,var(--accent1),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Haval Jalal</span>.</div>
-          <div class="sub">A 34-year-old Junior Software Engineer who loves building clean, practical apps and learning modern web tech.</div>
-        </div>
+        <section class="about" id="about" data-animate>
+            <div class="avatar">HJ</div>
+            <h2>About Me</h2>
+            <p>I'm a junior software engineer based in Erbil, Iraq. I love learning by building practical projects and constantly exploring new tools and frameworks.</p>
+            <div class="skills">
+                <div class="skill">JavaScript</div>
+                <div class="skill">React</div>
+                <div class="skill">Node.js</div>
+                <div class="skill">SQL</div>
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">Git</div>
+            </div>
+        </section>
 
-        <div class="chips" aria-hidden>
-          <div class="chip">JavaScript</div>
-          <div class="chip">React</div>
-          <div class="chip">Node.js</div>
-          <div class="chip">HTML &amp; CSS</div>
-          <div class="chip">Git</div>
-          <div class="chip">SQL</div>
-        </div>
+        <section class="projects" id="projects" data-animate>
+            <h2>🚀 Projects</h2>
+            <div class="grid">
+                <a href="https://github.com/Haval-Jalal" target="_blank" class="project">
+                    <h3>Portfolio Website</h3>
+                    <p>A modern responsive portfolio hosted on GitHub Pages.</p>
+                    <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+                </a>
+                <a href="https://github.com/Haval-Jalal" target="_blank" class="project">
+                    <h3>Task Tracker</h3>
+                    <p>A simple task management app with local storage support.</p>
+                    <div class="tags"><span class="tag">JavaScript</span><span class="tag">LocalStorage</span></div>
+                </a>
+                <a href="https://github.com/Haval-Jalal" target="_blank" class="project">
+                    <h3>API Helper</h3>
+                    <p>Utility tool for simplifying REST API calls in Node.js.</p>
+                    <div class="tags"><span class="tag">Node.js</span><span class="tag">REST</span></div>
+                </a>
+            </div>
+        </section>
 
-        <div style="display:flex; gap:12px; align-items:center">
-          <a class="btn btn-primary" href="#contact">Hire me</a>
-          <a class="btn btn-ghost" href="#projects">See projects</a>
-        </div>
+        <section class="contact" id="contact" data-animate>
+            <h2>📬 Contact Me</h2>
+            <p>Let's connect! Reach me via the form below or directly through email.</p>
+            <form onsubmit="return handleContact(event)">
+                <input id="name" placeholder="Your Name" required>
+                <input id="email" type="email" placeholder="Your Email" required>
+                <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+                <div id="form-msg" style="font-size:13px; color:var(--muted)"></div>
+            </form>
+            <p style="margin-top:12px">📧 Or email me directly at <a href="mailto:Haval.jalal@hotmail.com">Haval.jalal@hotmail.com</a></p>
+            <p>🔗 <a href="https://github.com/Haval-Jalal" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/havaljalal/" target="_blank">LinkedIn</a></p>
+        </section>
 
-        <div style="margin-top:18px; color:var(--muted); font-size:14px">Tip: press <span class="kbd">/</span> to focus search (demo).</div>
+        <footer>
+            © 2025 Haval Jalal — Built with ❤️ and hosted on GitHub Pages
+        </footer>
+    </div>
 
-        <div style="margin-top:18px">
-          <div class="card" style="padding:12px">
-            <div class="muted">About me</div>
-            <p style="margin:8px 0 0">I’m focused on front-end and full-stack basics, writing readable code, and shipping features. I enjoy learning by building — small projects, utilities, and improving developer workflows.</p>
-          </div>
-        </div>
-      </section>
+    <script>
+        // Typing effect
+        const typingEl = document.getElementById('typing');
+        const roles = ["Junior Software Engineer", "Frontend Developer", "Full-Stack Learner", "Tech Enthusiast"];
+        let roleIndex = 0, charIndex = 0;
+        function type() {
+            if (charIndex < roles[roleIndex].length) {
+                typingEl.textContent += roles[roleIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            } else {
+                setTimeout(erase, 2000);
+            }
+        }
+        function erase() {
+            if (charIndex > 0) {
+                typingEl.textContent = roles[roleIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, 50);
+            } else {
+                roleIndex = (roleIndex + 1) % roles.length;
+                setTimeout(type, 500);
+            }
+        }
+        type();
 
-      <aside class="card profile" aria-label="Profile card">
-        <div class="avatar">HJ</div>
-        <div style="font-weight:800; font-size:18px">Haval Jalal</div>
-        <div class="age">34 years old</div>
-        <div class="role">Junior Software Engineer</div>
+        // Contact form mailto
+        function handleContact(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const msg = document.getElementById('form-msg');
+            if (!name || !email || !message) { msg.textContent = 'Please fill all fields.'; return false; }
+            const subject = encodeURIComponent('Portfolio contact from ' + name);
+            const body = encodeURIComponent(message + "\n\n— " + name + " (" + email + ")");
+            window.location.href = `mailto:Haval.jalal@hotmail.com?subject=${subject}&body=${body}`;
+            msg.textContent = 'Opening your mail client...';
+            return false;
+        }
 
-        <div class="stats" style="margin-top:8px">
-          <div class="stat"><span class="muted">Experience</span><strong>2+ yrs</strong></div>
-          <div class="stat"><span class="muted">Repos</span><strong>12</strong></div>
-          <div class="stat"><span class="muted">Languages</span><strong>JS • HTML • CSS</strong></div>
-        </div>
+        // Scroll animations
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
 
-        <div style="width:100%; margin-top:12px; display:flex; gap:8px">
-          <a class="btn btn-primary" href="mailto:youremail@example.com">Email me</a>
-          <a class="btn btn-ghost" href="#projects">GitHub</a>
-        </div>
-      </aside>
-    </main>
-
-    <section id="projects" style="margin-top:26px">
-      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px">
-        <h3 style="margin:0">Selected projects</h3>
-        <div class="muted">Small, clean and practical.</div>
-      </div>
-
-      <div class="grid">
-        <article class="project">
-          <h4>Personal Portfolio</h4>
-          <p class="muted">A single-file responsive portfolio (this page!) designed for GitHub Pages.</p>
-          <div class="tags" style="margin-top:10px"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
-        </article>
-
-        <article class="project">
-          <h4>Task Tracker</h4>
-          <p class="muted">Minimal task manager with local storage and keyboard shortcuts.</p>
-          <div class="tags" style="margin-top:10px"><span class="tag">Vanilla JS</span><span class="tag">LocalStorage</span></div>
-        </article>
-
-        <article class="project">
-          <h4>API Helper</h4>
-          <p class="muted">Small Node utility to wrap fetch requests and error handling for microservices.</p>
-          <div class="tags" style="margin-top:10px"><span class="tag">Node</span><span class="tag">REST</span></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" style="margin-top:26px">
-      <div class="card">
-        <h3 style="margin-top:0">Contact</h3>
-        <p class="muted">Want to work together or have a question? Send a message.</p>
-
-        <form class="contact-form" onsubmit="return handleContact(event)">
-          <input id="name" placeholder="Your name" required />
-          <input id="email" type="email" placeholder="you@domain.com" required />
-          <textarea id="message" rows="5" placeholder="Message" required></textarea>
-          <div style="display:flex; gap:8px">
-            <button class="btn btn-primary" type="submit">Send message</button>
-            <button class="btn btn-ghost" type="button" onclick="copyEmail()">Copy email</button>
-          </div>
-          <div id="form-msg" style="color:var(--muted); font-size:13px"></div>
-        </form>
-      </div>
-    </section>
-
-    <footer>
-      Built by <strong>Haval Jalal</strong> • 34 • Junior Software Engineer — Hosted on GitHub Pages
-    </footer>
-
-  </div>
-
-  <!-- decorative blob -->
-  <svg class="blob" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-    <g transform="translate(300,300)">
-      <path d="M120,-178C150,-146,156,-95,166,-43C176,9,190,62,176,104C162,146,120,178,74,189C28,200,-20,191,-65,170C-110,149,-152,116,-170,69C-188,22,-182,-36,-160,-86C-138,-135,-100,-176,-55,-195C-9,-214,41,-211,89,-200C137,-188,87,-209,120,-178Z" fill="url(#g)"/>
-      <defs>
-        <linearGradient id="g" x1="0%" x2="100%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
-      </defs>
-    </g>
-  </svg>
-
-  <script>
-    // Small interactive bits
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', (e)=>{e.preventDefault(); document.body.classList.toggle('light'); toggleTheme();});
-
-    function toggleTheme(){
-      const light = document.body.classList.contains('light');
-      if(light){
-        document.documentElement.style.setProperty('--bg','#e6eef8');
-        document.documentElement.style.setProperty('--card','#ffffff');
-        document.documentElement.style.setProperty('--muted','#475569');
-        document.documentElement.style.setProperty('--accent1','#7c3aed');
-        document.documentElement.style.setProperty('--accent2','#06b6d4');
-        document.body.style.background = 'linear-gradient(180deg,#f8fafc,#e6eef8)';
-        document.body.style.color = '#071422';
-      } else {
-        document.documentElement.style.removeProperty('--bg');
-        document.documentElement.style.removeProperty('--card');
-        document.documentElement.style.removeProperty('--muted');
-        document.documentElement.style.removeProperty('--accent1');
-        document.documentElement.style.removeProperty('--accent2');
-        document.body.style.background = '';
-        document.body.style.color = '';
-      }
-    }
-
-    // Contact form demo — doesn't send email (GitHub Pages static). We provide mailto fallback and local feedback.
-    function handleContact(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      const msg = document.getElementById('form-msg');
-      if(!name || !email || !message){ msg.textContent = 'Please fill all fields.'; return false; }
-
-      // open mail client as fallback
-      const subject = encodeURIComponent('Contact from portfolio — ' + name);
-      const body = encodeURIComponent(message + '\n\n— ' + name + '\n' + email);
-      window.location.href = `mailto:youremail@example.com?subject=${subject}&body=${body}`;
-
-      msg.textContent = 'Opening your mail client...';
-      return false;
-    }
-
-    function copyEmail(){
-      navigator.clipboard && navigator.clipboard.writeText('youremail@example.com')
-        .then(()=>{document.getElementById('form-msg').textContent = 'Email copied to clipboard.'})
-        .catch(()=>{document.getElementById('form-msg').textContent = 'Copy failed — email: youremail@example.com'});
-    }
-
-    // Keyboard shortcut demo: focus first input on '/'
-    window.addEventListener('keydown', (e)=>{
-      if(e.key === '/'){
-        const el = document.getElementById('name'); if(el){ el.focus(); e.preventDefault(); }
-      }
-    });
-
-    // Tiny accessibility: focus visible style
-    (function(){
-      let mouse = false;
-      window.addEventListener('mousedown', ()=> mouse=true);
-      window.addEventListener('keydown', ()=> mouse=false);
-      document.body.addEventListener('focusin', (e)=>{
-        if(!mouse) e.target.style.outline = '3px solid rgba(124,58,237,0.18)';
-      });
-      document.body.addEventListener('focusout', (e)=>{ e.target.style.outline = 'none'; });
-    })();
-  </script>
+        // Active nav link
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 80;
+                if (pageYOffset >= top) current = section.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
