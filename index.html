@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haval Jalal — Junior Software Engineer</title>
+  <meta name="description" content="Haval Jalal — Junior Software Engineer | Portfolio" />
+  <meta name="author" content="Haval Jalal" />
+
+  <!-- Favicon (simple SVG data URI) -->
+  <link rel="icon" href='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23000%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2250%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-family=%22Arial,Helvetica,sans-serif%22%3EHJ%3C/text%3E%3C/svg%3E' />
+
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent1:#7c3aed; --accent2:#06b6d4;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px; --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent),
+                  radial-gradient(1000px 500px at 90% 90%, rgba(6,182,212,0.06), transparent),
+                  linear-gradient(180deg, #061021 0%, #071426 35%, #071122 100%);
+      color:#e6eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      padding:32px; display:flex; align-items:center; justify-content:center;
+    }
+
+    .wrap{width:100%; max-width:var(--max-width);}
+
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:28px;
+    }
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo{
+      width:56px; height:56px; border-radius:12px; background:linear-gradient(135deg,var(--accent1),var(--accent2));
+      display:grid; place-items:center; font-weight:700; font-size:20px; color:white; box-shadow:0 6px 20px rgba(2,6,23,0.6);
+    }
+    nav{display:flex; gap:12px; align-items:center}
+    .nav-link{color:var(--muted); text-decoration:none; padding:8px 12px; border-radius:10px; font-weight:600; font-size:14px}
+    .nav-link:hover{color:var(--accent2); background:rgba(255,255,255,0.02)}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns: 1fr 380px; gap:28px; align-items:stretch}
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius); padding:24px; box-shadow:0 8px 30px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03)}
+
+    .intro{display:flex; flex-direction:column; gap:18px}
+    .headline{font-size:28px; font-weight:800; line-height:1.02}
+    .sub{color:var(--muted); font-weight:600}
+
+    .chips{display:flex; gap:10px; flex-wrap:wrap}
+    .chip{background:var(--glass); padding:8px 12px; border-radius:999px; font-weight:700; font-size:13px; color:var(--muted)}
+
+    /* profile card */
+    .profile{display:flex; flex-direction:column; gap:18px; align-items:center; text-align:center}
+    .avatar{width:120px; height:120px; border-radius:20px; display:grid; place-items:center; font-weight:800; font-size:34px; color:#041025;
+      background:linear-gradient(180deg,#fff,#e6eef8); box-shadow:0 10px 30px rgba(2,6,23,0.5)}
+    .age{color:var(--muted); font-weight:700}
+    .role{font-weight:800; font-size:16px}
+
+    /* stats */
+    .stats{display:flex; gap:12px; width:100%; justify-content:space-between}
+    .stat{flex:1; background:rgba(255,255,255,0.02); padding:12px; border-radius:12px}
+    .stat strong{display:block; font-size:18px}
+    .muted{color:var(--muted)}
+
+    /* projects */
+    .grid{display:grid; gap:14px; grid-template-columns:repeat(3,1fr)}
+    @media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:600px){.grid{grid-template-columns:1fr}}
+    .project{padding:14px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent); border:1px solid rgba(255,255,255,0.02)}
+    .project h4{margin:0 0 8px 0}
+    .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{font-size:12px; padding:6px 8px; border-radius:8px; background:rgba(255,255,255,0.02); color:var(--muted)}
+
+    /* contact */
+    .contact-form{display:flex; flex-direction:column; gap:10px}
+    input,textarea{background:transparent; border:1px solid rgba(255,255,255,0.04); padding:10px 12px; border-radius:10px; color:inherit; outline:none}
+    input:focus,textarea:focus{border-color:rgba(124,58,237,0.7); box-shadow:0 6px 20px rgba(124,58,237,0.06)}
+    .btn{display:inline-flex; gap:8px; align-items:center; padding:10px 14px; border-radius:12px; border:none; cursor:pointer; font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#041025}
+    .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--muted)}
+
+    footer{margin-top:30px; color:var(--muted); text-align:center; font-size:13px}
+
+    /* small utilities */
+    .kbd{background:rgba(0,0,0,0.3); padding:4px 8px; border-radius:6px; font-weight:700}
+
+    /* subtle floating blob animation */
+    .blob{position:absolute; inset:auto; width:320px; height:320px; right:-80px; top:-80px; filter:blur(40px); opacity:0.12; pointer-events:none; transform:rotate(10deg)}
+
+    /* tiny responsiveness tweaks */
+    @media (max-width:480px){body{padding:20px} .headline{font-size:22px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">HJ</div>
+        <div>
+          <div style="font-weight:800;">Haval Jalal</div>
+          <div style="font-size:12px; color:var(--muted)">Junior Software Engineer • 34 years old</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link" href="#" id="theme-toggle">Toggle Theme</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="card intro">
+        <div>
+          <div class="headline">Hi — I’m <span style="background:linear-gradient(90deg,var(--accent1),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Haval Jalal</span>.</div>
+          <div class="sub">A 34-year-old Junior Software Engineer who loves building clean, practical apps and learning modern web tech.</div>
+        </div>
+
+        <div class="chips" aria-hidden>
+          <div class="chip">JavaScript</div>
+          <div class="chip">React</div>
+          <div class="chip">Node.js</div>
+          <div class="chip">HTML &amp; CSS</div>
+          <div class="chip">Git</div>
+          <div class="chip">SQL</div>
+        </div>
+
+        <div style="display:flex; gap:12px; align-items:center">
+          <a class="btn btn-primary" href="#contact">Hire me</a>
+          <a class="btn btn-ghost" href="#projects">See projects</a>
+        </div>
+
+        <div style="margin-top:18px; color:var(--muted); font-size:14px">Tip: press <span class="kbd">/</span> to focus search (demo).</div>
+
+        <div style="margin-top:18px">
+          <div class="card" style="padding:12px">
+            <div class="muted">About me</div>
+            <p style="margin:8px 0 0">I’m focused on front-end and full-stack basics, writing readable code, and shipping features. I enjoy learning by building — small projects, utilities, and improving developer workflows.</p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card profile" aria-label="Profile card">
+        <div class="avatar">HJ</div>
+        <div style="font-weight:800; font-size:18px">Haval Jalal</div>
+        <div class="age">34 years old</div>
+        <div class="role">Junior Software Engineer</div>
+
+        <div class="stats" style="margin-top:8px">
+          <div class="stat"><span class="muted">Experience</span><strong>2+ yrs</strong></div>
+          <div class="stat"><span class="muted">Repos</span><strong>12</strong></div>
+          <div class="stat"><span class="muted">Languages</span><strong>JS • HTML • CSS</strong></div>
+        </div>
+
+        <div style="width:100%; margin-top:12px; display:flex; gap:8px">
+          <a class="btn btn-primary" href="mailto:youremail@example.com">Email me</a>
+          <a class="btn btn-ghost" href="#projects">GitHub</a>
+        </div>
+      </aside>
+    </main>
+
+    <section id="projects" style="margin-top:26px">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px">
+        <h3 style="margin:0">Selected projects</h3>
+        <div class="muted">Small, clean and practical.</div>
+      </div>
+
+      <div class="grid">
+        <article class="project">
+          <h4>Personal Portfolio</h4>
+          <p class="muted">A single-file responsive portfolio (this page!) designed for GitHub Pages.</p>
+          <div class="tags" style="margin-top:10px"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+        </article>
+
+        <article class="project">
+          <h4>Task Tracker</h4>
+          <p class="muted">Minimal task manager with local storage and keyboard shortcuts.</p>
+          <div class="tags" style="margin-top:10px"><span class="tag">Vanilla JS</span><span class="tag">LocalStorage</span></div>
+        </article>
+
+        <article class="project">
+          <h4>API Helper</h4>
+          <p class="muted">Small Node utility to wrap fetch requests and error handling for microservices.</p>
+          <div class="tags" style="margin-top:10px"><span class="tag">Node</span><span class="tag">REST</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:26px">
+      <div class="card">
+        <h3 style="margin-top:0">Contact</h3>
+        <p class="muted">Want to work together or have a question? Send a message.</p>
+
+        <form class="contact-form" onsubmit="return handleContact(event)">
+          <input id="name" placeholder="Your name" required />
+          <input id="email" type="email" placeholder="you@domain.com" required />
+          <textarea id="message" rows="5" placeholder="Message" required></textarea>
+          <div style="display:flex; gap:8px">
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <button class="btn btn-ghost" type="button" onclick="copyEmail()">Copy email</button>
+          </div>
+          <div id="form-msg" style="color:var(--muted); font-size:13px"></div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      Built by <strong>Haval Jalal</strong> • 34 • Junior Software Engineer — Hosted on GitHub Pages
+    </footer>
+
+  </div>
+
+  <!-- decorative blob -->
+  <svg class="blob" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+    <g transform="translate(300,300)">
+      <path d="M120,-178C150,-146,156,-95,166,-43C176,9,190,62,176,104C162,146,120,178,74,189C28,200,-20,191,-65,170C-110,149,-152,116,-170,69C-188,22,-182,-36,-160,-86C-138,-135,-100,-176,-55,-195C-9,-214,41,-211,89,-200C137,-188,87,-209,120,-178Z" fill="url(#g)"/>
+      <defs>
+        <linearGradient id="g" x1="0%" x2="100%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+      </defs>
+    </g>
+  </svg>
+
+  <script>
+    // Small interactive bits
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', (e)=>{e.preventDefault(); document.body.classList.toggle('light'); toggleTheme();});
+
+    function toggleTheme(){
+      const light = document.body.classList.contains('light');
+      if(light){
+        document.documentElement.style.setProperty('--bg','#e6eef8');
+        document.documentElement.style.setProperty('--card','#ffffff');
+        document.documentElement.style.setProperty('--muted','#475569');
+        document.documentElement.style.setProperty('--accent1','#7c3aed');
+        document.documentElement.style.setProperty('--accent2','#06b6d4');
+        document.body.style.background = 'linear-gradient(180deg,#f8fafc,#e6eef8)';
+        document.body.style.color = '#071422';
+      } else {
+        document.documentElement.style.removeProperty('--bg');
+        document.documentElement.style.removeProperty('--card');
+        document.documentElement.style.removeProperty('--muted');
+        document.documentElement.style.removeProperty('--accent1');
+        document.documentElement.style.removeProperty('--accent2');
+        document.body.style.background = '';
+        document.body.style.color = '';
+      }
+    }
+
+    // Contact form demo — doesn't send email (GitHub Pages static). We provide mailto fallback and local feedback.
+    function handleContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const msg = document.getElementById('form-msg');
+      if(!name || !email || !message){ msg.textContent = 'Please fill all fields.'; return false; }
+
+      // open mail client as fallback
+      const subject = encodeURIComponent('Contact from portfolio — ' + name);
+      const body = encodeURIComponent(message + '\n\n— ' + name + '\n' + email);
+      window.location.href = `mailto:youremail@example.com?subject=${subject}&body=${body}`;
+
+      msg.textContent = 'Opening your mail client...';
+      return false;
+    }
+
+    function copyEmail(){
+      navigator.clipboard && navigator.clipboard.writeText('youremail@example.com')
+        .then(()=>{document.getElementById('form-msg').textContent = 'Email copied to clipboard.'})
+        .catch(()=>{document.getElementById('form-msg').textContent = 'Copy failed — email: youremail@example.com'});
+    }
+
+    // Keyboard shortcut demo: focus first input on '/'
+    window.addEventListener('keydown', (e)=>{
+      if(e.key === '/'){
+        const el = document.getElementById('name'); if(el){ el.focus(); e.preventDefault(); }
+      }
+    });
+
+    // Tiny accessibility: focus visible style
+    (function(){
+      let mouse = false;
+      window.addEventListener('mousedown', ()=> mouse=true);
+      window.addEventListener('keydown', ()=> mouse=false);
+      document.body.addEventListener('focusin', (e)=>{
+        if(!mouse) e.target.style.outline = '3px solid rgba(124,58,237,0.18)';
+      });
+      document.body.addEventListener('focusout', (e)=>{ e.target.style.outline = 'none'; });
+    })();
+  </script>
+</body>
+</html>
